@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nuestra Tierra</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10;
+      background-image: url(img/FondoNTierra2.jpg);
+      background-size: 1550px;
+      background-attachment: local, scroll;
+    
+    }
+
+    /* Estilos para el encabezado */
+    header {
+      background-color: #aca385e1;
+      color: #fff;
+      padding: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+    }
+
+    header h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+
+    /* Estilos para las secciones */
+    section {
+      margin: 50px;
+    }
+
+    section h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    
+    .producto {
+      background-color: #6e726c7c;
+      border: 1px solid #ccc;
+      padding: 60px;
+      margin-bottom: 20px;
+    }
+
+    .producto h3 {
+      font-size: 1.9em;
+      margin-bottom: 5px;
+    }
+
+    .producto p {
+      margin-bottom: 10px;
+    }
+
+    .producto button {
+      padding: 10px 10px;
+      background-color: #333;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .carrito {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .carrito h3 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+
+    .carrito .producto {
+      margin-bottom: 10px;
+    }
+
+    .carrito .producto p {
+      margin-bottom: 5px;
+    }
+
+    .carrito .precio-total {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .boton-volver-arriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 999;
+  }
+
+  .boton-volver-arriba:hover {
+    background-color: #555;
+  }
+
+  #recuadro-login {
+  position: fixed;
+  top: 30%;
+  right: 20px;
+  transform: translateY(-50%);
+  padding: 20px;
+  background-color: #948f8f22;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+#recuadro-login img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+#recuadro-login h3.titulo-login {
+  font-size: 1.0em;
+  margin: 0;
+  cursor: pointer;
+  font-family: Arial, sans-serif; /* Cambia la fuente del texto */
+  color: #ffffff; /* Cambia el color del texto a blanco */
+}
+
+    /* Estilos para el formulario */
+/* Estilos para formularios */
+form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .mensaje-error {
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    .contenedor-recuadro {
+    width: 15cm;
+    height: 5cm;
+    border: 3px solid rgba(226, 221, 221, 0.726);
+    padding: 30px;
+    margin-left: 430px;
+    margin-top: 118px;
+  }
+
+  .boton-volver-arriba {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 9999;
+  }
+
+  </style>
+
+
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#carrito">Carrito</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+
+    </nav>
+  </header>
+
+
+  <!-- Contenido -->
+  <div id="contenido">
+    <section id="inicio">
+        <h2 style="font-size: 54px;">Inicio</h2>
+        <div class="contenedor-recuadro">
+         <p style="font-size: 22px; font-family: 'Times New Roman'; color: #272727; background-color: #e4ecec8c; padding: 10px;"> 
+          Bienvenidos a la plataforma que acerca los productos de nuestros campesinos a la comodidad de tu hogar, frescos y en el menor tiempo posible, con los mejores precios. 
+          Al comprar en nuestra plataforma estas apoyando el campesino Colombiano, nuestras raíces. 
+        </p>
+        </div>
+        <div id="recuadro-login">
+            <img src="img\3893064.png" alt="Logo Iniciar Sesión">
+            <h3 class="titulo-login"><a href="#registro" onclick="mostrarSeccion('registro')">Registro</a></h3>
+            <h3 class="titulo-login"><a href="#login" onclick="mostrarSeccion('login')">LogIn</a></h3>
+
+          </div>
+    </section>
+
+    <section id="productos">
+      <h2>Productos</h2>
+      <div id="busqueda-productos">
+        <input type="text" id="campo-busqueda" placeholder="Buscar productos...">
+        <button onclick="buscarProductos()">Buscar</button>
+      </div>
+
+      <div id="resultados-busqueda"></div>
+
+      <!-- Listado de productos -->
+      <div class="producto">
+        <img src="img\Carne-de-cerdo.jpg" alt="Carne de cerdo" style="width: 300px; height: 245px; float: right; margin-right: 200px; margin-top: -35px ;">
+        <h3>Carne de cerdo</h3>
+        <p>Carne de cerdo, por libra.</p>
+        <p>Precio: $8.400</p>
+        <button onclick="agregarAlCarrito(1, 'Carne de cerdo', 8400)">Agregar al Carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img\Aguacate.jpg" alt="Aguacate" style="width: 300px; height: 245px; float: right; margin-right: 200px; margin-top: -35px ;">
+        <h3>Aguacate</h3>
+        <p>Aguacate por libra.</p>
+        <p>Precio: $1.200</p>
+        <button onclick="agregarAlCarrito(2, 'Aguacate', 1200)">Agregar al Carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img\Papas.jpg" alt="Papa Sabanera" style="width: 300px; height: 245px; float: right; margin-right: 200px; margin-top: -35px ;">
+        <h3>Papa Sabanera</h3>
+        <p>Papa sabanera por libra.</p>
+        <p>Precio: $1.800</p>
+        <button onclick="agregarAlCarrito(3, 'Papa Sabanera', 1800)">Agregar al Carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img\MOjarra.jpg" alt="Mojarra" style="width: 300px; height: 250px; float: right; margin-right: 200px; margin-top: -35px ;">
+        <h3>Mojarra</h3>
+        <p>Mojarra por libra.</p>
+        <p>Precio: $6.500</p>
+        <button onclick="agregarAlCarrito(4, 'Mojarra', 6500)">Agregar al Carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img\tomate-02.jpg.webp" alt="Tomate" style="width: 300px; height: 250px; float: right; margin-right: 200px; margin-top: -35px ;">
+        <h3>Tomate</h3>
+        <p>Tomate por libra.</p>
+        <p>Precio: $1.700</p>
+        <button onclick="agregarAlCarrito(5, 'Tomate', 1700)">Agregar al Carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img\papaya18a.jpeg" alt="Papaya" style="width: 300px; height: 250px; float: right; margin-right: 200px; margin-top: -35px ;">
+        <h3>Papaya</h3>
+        <p>Papaya por libra.</p>
+        <p>Precio: $4.200</p>
+        <button onclick="agregarAlCarrito(6, 'Papaya', 4200)">Agregar al Carrito</button>
+      </div>
+      <!-- Repite lo anterior para los otros productos -->
+    </section>
+
+    <section id="carrito" style="background-color: #e4ecec8c;">
+        <h2 style="font-size: 32px;">Carrito</h2>
+        <!-- Contenido del carrito -->
+        <div id="carrito-contenido">
+          <!-- Los productos agregados se mostrarán aquí -->
+        </div>
+        <p style="font-size: 22px;">Precio total: <span id="precio-total">$0</span></p>
+      </section>
+
+    <section id="nosotros" style="background-color: #e4ecec8c;">
+      <h2>Nosotros</h2>
+      <div>
+        <h3>Sobre nosotros</h3>
+        <p>Somos una empresa dedicada a llevar los productos frescos del campo directamente a tu mesa. Nuestro objetivo es ofrecer alimentos saludables y de calidad a nuestros clientes.</p>
+      </div>
+      <div>
+        <h3>Nuestro trabajo</h3>
+        <p>Trabajamos de cerca con agricultores locales para garantizar que nuestros productos sean cultivados de manera sostenible y respetuosa con el medio ambiente. Realizamos cuidadosos controles de calidad para asegurarnos de que solo obtengas lo mejor.</p>
+      </div>
+    </section>
+
+    <section id="registro" style="display: none;">
+      <h2>Registro</h2>
+      <form onsubmit="return validarRegistro()">
+        <label for="cedula">Cédula:</label>
+        <input type="number" id="cedula" required>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" required>
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" required>
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" required>
+        <label for="celular">Celular:</label>
+        <input type="text" id="celular" required>
+        <label for="clave">Clave:</label>
+        <input type="password" id="clave" required>
+        <input type="submit" value="Registrarse">
+        <p id="mensaje-error" class="mensaje-error"></p>
+      </form>
+    </section>
+
+    <section id="login" style="display: none;">
+      <h2>LogIn</h2>
+      <form onsubmit="return validarLogin()">
+        <label for="usuario">Usuario:</label>
+        <input type="number" id="usuario" required>
+        <label for="clave-login">Clave:</label>
+        <input type="password" id="clave-login" required>
+        <input type="submit" value="Iniciar Sesión">
+        <p id="mensaje-error-login" class="mensaje-error"></p>
+      </form>
+    </section>
+  </div>
+
+    <!-- Botón Volver arriba -->
+    <a href="#inicio" class="boton-volver-arriba" id="boton-volver-arriba">Volver arriba</a>
+
+  <!-- Scripts -->
+  <script>
+var carrito = [];
+
+// Función para agregar un producto al carrito
+function agregarAlCarrito(idProducto, nombre, precio) {
+  // Buscar si el producto ya está en el carrito
+  var productoExistente = carrito.find((item) => item.id === idProducto);
+
+  if (productoExistente) {
+    productoExistente.cantidad++;
+  } else {
+    var nuevoProducto = {
+      id: idProducto,
+      nombre: nombre,
+      precio: precio,
+      cantidad: 1,
+    };
+    carrito.push(nuevoProducto);
+  }
+
+  mostrarProductosEnCarrito();
+}
+
+// Función para mostrar los productos en el carrito
+function mostrarProductosEnCarrito() {
+  var carritoContenido = document.getElementById("carrito-contenido");
+  var precioTotal = 0;
+
+  // Vaciar el contenido del carrito
+  carritoContenido.innerHTML = "";
+
+  carrito.forEach((producto) => {
+    var subtotal = producto.precio * producto.cantidad;
+    precioTotal += subtotal;
+
+    var productoHTML =
+      '<div class="carrito-producto">' +
+      "<h3>" +
+      producto.nombre +
+      "</h3>" +
+      "<p>Cantidad: " +
+      producto.cantidad +
+      "</p>" +
+      "<p>Subtotal: $" +
+      subtotal +
+      "</p>" +
+      "</div>";
+
+    carritoContenido.innerHTML += productoHTML;
+  });
+
+  // Actualizar el precio total
+  var precioTotalElemento = document.getElementById("precio-total");
+  precioTotalElemento.innerText = "$" + precioTotal;
+}
+
+    // Función para mostrar una sección y ocultar las demás
+    function mostrarSeccion(seccionId) {
+      var secciones = document.getElementsByTagName('section');
+      for (var i = 0; i < secciones.length; i++) {
+        if (secciones[i].id === seccionId) {
+          secciones[i].style.display = 'block';
+        } else {
+          secciones[i].style.display = 'none';
+        }
+      }
+    }
+    // Agregar eventos de clic a los enlaces de navegación
+    document.getElementById('inicio-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      mostrarSeccion('inicio');
+    });
+
+    document.getElementById('productos-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      mostrarSeccion('productos');
+    });
+
+    document.getElementById('carrito-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      mostrarSeccion('carrito');
+    });
+
+    document.getElementById('nosotros-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      mostrarSeccion('nosotros');
+    });
+
+    document.getElementById('registro-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      mostrarSeccion('registro');
+    });
+
+    document.getElementById('login-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      mostrarSeccion('login');
+    });
+
+    // Función para validar el formulario de registro
+    function validarRegistro() {
+      var cedula = document.getElementById('cedula').value;
+      var email = document.getElementById('email').value;
+      var ciudad = document.getElementById('ciudad').value;
+      var direccion = document.getElementById('direccion').value;
+      var celular = document.getElementById('celular').value;
+      var clave = document.getElementById('clave').value;
+      var mensajeError = document.getElementById('mensaje-error');
+
+      // Validar que todos los campos estén completos
+      if (cedula === '' || email === '' || ciudad === '' || direccion === '' || celular === '' || clave === '') {
+        mensajeError.innerText = 'Por favor, completa todos los campos.';
+        return false;
+      }
+
+      // Validar que el usuario sea el mismo número de cédula
+      if (cedula !== clave) {
+        mensajeError.innerText = 'El número de cédula debe ser igual a la clave.';
+        return false;
+      }
+
+      // Restablecer mensaje de error
+      mensajeError.innerText = '';
+
+      // Aquí puedes agregar la lógica para procesar los datos de registro
+      // Por ejemplo, puedes enviarlos a un servidor para guardarlos en una base de datos
+
+      // Lógica adicional según tus necesidades
+
+      // Si todo es válido, se puede redirigir al usuario a otra página
+      // Por ejemplo:
+      // window.location.href = 'registro_exitoso.html';
+
+      return true;
+    }
+
+    // Función para validar el formulario de login
+    function validarLogin() {
+      var usuario = document.getElementById('usuario').value;
+      var claveLogin = document.getElementById('clave-login').value;
+      var mensajeError = document.getElementById('mensaje-error-login');
+
+      // Validar que ambos campos estén completos
+      if (usuario === '' || claveLogin === '') {
+        mensajeError.innerText = 'Por favor, completa todos los campos.';
+        return false;
+      }
+
+      // Validar la lógica de autenticación
+      // Aquí puedes agregar la lógica para validar las credenciales ingresadas
+      // Por ejemplo, puedes compararlas con datos almacenados en una base de datos
+
+      // Lógica adicional según tus necesidades
+
+      // Si las credenciales son válidas, se puede redirigir al usuario a otra página
+      // Por ejemplo:
+      // window.location.href = 'inicio_sesion_exitoso.html';
+
+      // Si las credenciales no son válidas, mostrar un mensaje de error
+      mensajeError.innerText = 'Usuario o clave incorrectos.';
+      return false;
+    }
+        array.forEach(element => {
+        window.onload = function() {
+          mostrarSeccion('inicio');
+        };
+ });
+
+ window.onscroll = function() {
+    mostrarBotonVolverArriba();
+  };
+
+    // Función para ocultar el botón "Volver arriba" si no se encuentra en la parte superior de la página
+    function ocultarBotonVolverArriba() {
+      var botonVolverArriba = document.getElementById('boton-volver-arriba');
+      if (document.documentElement.scrollTop > 300) {
+        botonVolverArriba.style.display = 'block';
+      } else {
+        botonVolverArriba.style.display = 'none';
+      }
+    }
+
+    // Agregar evento de desplazamiento para mostrar/ocultar el botón "Volver arriba"
+    window.onscroll = function() {
+      ocultarBotonVolverArriba();
+    };
+
+     // Función para mostrar una ventana emergente
+     function mostrarVentanaEmergente(ventanaId) {
+      var ventanaEmergente = document.getElementById(ventanaId);
+      ventanaEmergente.style.display = 'block';
+    }
+
+    // Función para cerrar una ventana emergente
+    function cerrarVentanaEmergente(ventanaId) {
+      var ventanaEmergente = document.getElementById(ventanaId);
+      ventanaEmergente.style.display = 'none';
+    }
+
+    // Función para buscar productos
+function buscarProductos() {
+  var campoBusqueda = document.getElementById("campo-busqueda");
+  var resultadosContenedor = document.getElementById("resultados-busqueda");
+  var terminoBusqueda = campoBusqueda.value.toLowerCase();
+
+  // Limpiar resultados anteriores
+  resultadosContenedor.innerHTML = "";
+
+  // Filtrar productos que coinciden con el término de búsqueda
+  var productosCoincidentes = carrito.filter(function (producto) {
+    return producto.nombre.toLowerCase().includes(terminoBusqueda);
+  });
+
+  if (productosCoincidentes.length === 0) {
+    resultadosContenedor.innerHTML = "<p>No se encontraron productos.</p>";
+    return;
+  }
+
+  // Mostrar productos coincidentes
+  productosCoincidentes.forEach(function (producto) {
+    var productoHTML =
+      '<div class="producto">' +
+      "<h3>" +
+      producto.nombre +
+      "</h3>" +
+      "<p>Precio: $" +
+      producto.precio +
+      "</p>" +
+      '<button onclick="agregarAlCarrito(' +
+      producto.id +
+      ', \'' +
+      producto.nombre +
+      "', " +
+      producto.precio +
+      ')">Agregar al Carrito</button>' +
+      "</div>";
+
+    resultadosContenedor.innerHTML += productoHTML;
+  });
+}
+
+  </script>
+</body>
+</html>
