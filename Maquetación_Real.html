@@ -476,12 +476,6 @@ function mostrarProductosEnCarrito() {
         return false;
       }
 
-      // Validar que el usuario sea el mismo número de cédula
-      if (cedula !== clave) {
-        mensajeError.innerText = 'El número de cédula debe ser igual a la clave.';
-        return false;
-      }
-
       // Restablecer mensaje de error
       mensajeError.innerText = '';
 
