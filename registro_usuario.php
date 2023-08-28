@@ -47,3 +47,4 @@ $verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo
     mysqli_close($conexion);
 
 ?>
+
