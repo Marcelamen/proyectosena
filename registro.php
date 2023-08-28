@@ -10,14 +10,14 @@
   <header>
     <nav>
       <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#carrito">Carrito</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-
+        <li><a href="Maquetación_Real.html">Inicio</a></li>
+        <li><a href="Maquetación_Real.html#productos">Productos</a></li>
+        <li><a href="Maquetación_Real.html#carrito">Carrito</a></li>
+        <li><a href="Maquetación_Real.html#nosotros">Nosotros</a></li>
     </nav>
   </header>
-  <section id="registro" style="display: none;">
+  <Form>
+  <section id="registro" >
       <form action="registro_usuario.php" method="POST"> 
         <h2>Registro</h2>
         <input type="text" placeholder="Cedula " name="cedula">
@@ -26,7 +26,7 @@
         <input type="text" placeholder="Direccion" name="direccion">
         <input type="text" placeholder="Celular" name="celular">
         <input type="password" placeholder="Clave" name="clave">
-        <input type="submit" value="Registrarse">
+        
     
         <input type="submit" value="Registrarse">
         <p id="mensaje-error" class="mensaje-error"></p>
